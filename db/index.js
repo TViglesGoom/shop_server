@@ -11,7 +11,11 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 const db = require('../models/index')(sequelize, Sequelize);
 
 const ProductCRUD = require('./product')(db);
+const CategoryCRUD = require('./category')(db);
+const SupplierCRUD = require('./supplier')(db);
 
 module.exports = {
     ProductCRUD,
+    CategoryCRUD,
+    SupplierCRUD
 }

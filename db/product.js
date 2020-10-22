@@ -20,7 +20,7 @@ module.exports = (db) => ({
         )
     },
     findProductById: (id) => {
-        return db.Product.findById(id);
+        return db.Product.findByPk(id);
     },
     updateProduct: (product, {name, price, expirationDate, measuring, quantity, supplierId, categoryId}) => {
         return product.update({

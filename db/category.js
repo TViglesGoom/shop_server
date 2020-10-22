@@ -8,7 +8,7 @@ module.exports = (db) => ({
         db.Supplier.findAll();
     },
     findCategory: (id) => {
-        return db.Category.findById(id);
+        return db.Category.findByPk(id);
     },
     removeCategory: (category) => {
         return category.destroy();

@@ -36,7 +36,7 @@ module.exports = {
         }
         try {
             Supplier = await SupplierCRUD.removeSupplier(Supplier);
-            res.status(204).send(Supplier);
+            res.status(204).send({message: `Supplier with id ${id} deleted successfully`});
         } catch (err) {
             res.status(400).send(err);
         }

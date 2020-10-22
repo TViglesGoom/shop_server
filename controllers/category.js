@@ -36,7 +36,7 @@ module.exports = {
         }
         try {
             Category = await CategoryCRUD.removeCategory(Category);
-            res.status(204).send(Category);
+            res.status(204).send({message: `Category with id ${id} deleted successfully`});
         } catch (err) {
             res.status(400).send(err);
         }

@@ -51,7 +51,7 @@ module.exports = {
         }
         try {
             Product = await ProductCRUD.deleteProduct(Product);
-            res.status(204).send(Product);
+            res.status(204).send({message: `Product with id ${id} deleted successfully`});
         } catch (err) {
             res.status(400).send(err);
         }

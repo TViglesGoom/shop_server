@@ -1,4 +1,5 @@
 const {ProductCRUD} = require('../db');
+const ProductSchema = require('./')
 
 module.exports = {
     async createProduct(req, res) {

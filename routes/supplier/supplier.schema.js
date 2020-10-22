@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const CategorySchema = Joi.object({
+const SupplierSchema = Joi.object({
     name: Joi.string()
         .alphanum()
         .min(3)
@@ -8,4 +8,4 @@ const CategorySchema = Joi.object({
         .required(),
 });
 
-module.exports = CategorySchema;
+module.exports = SupplierSchema;

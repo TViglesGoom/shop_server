@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.FLOAT,
             defaultValue: 0
         },
-        expiration_date: {
+        expireAt: {
             type: DataTypes.DATE,
             allow_null: false
         },

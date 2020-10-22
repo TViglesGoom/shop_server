@@ -1,7 +1,7 @@
 module.exports = (db) => ({
-    createProduct: ({name, price, expirationDate, measuring, quantity, supplierId, categoryId}) => {
+    createProduct: ({name, price, expireAt, measuring, quantity, supplierId, categoryId}) => {
         return db.Product.create({
-            name, price, expirationDate, measuring, quantity, supplierId, categoryId
+            name, price, expireAt, measuring, quantity, supplierId, categoryId
         });
     },
     listAllProducts: () => {
@@ -22,9 +22,9 @@ module.exports = (db) => ({
     findProductById: (id) => {
         return db.Product.findByPk(id);
     },
-    updateProduct: (product, {name, price, expirationDate, measuring, quantity, supplierId, categoryId}) => {
+    updateProduct: (product, {name, price, expireAt, measuring, quantity, supplierId, categoryId}) => {
         return product.update({
-            name, price, expirationDate, measuring, quantity, supplierId, categoryId
+            name, price, expireAt, measuring, quantity, supplierId, categoryId
         });
     },
     deleteProduct: (product) => {

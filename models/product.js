@@ -1,7 +1,22 @@
 'use strict';
-
+const {
+    Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    const Product = sequelize.define('Product', {
+    class Product extends Model {
+        static associate(models) {
+            Product.belongsTo(models.Category, {
+                foreignKey: 'categoryId',
+                onDelete: 'CASCADE'
+            });
+            Product.belongsTo(models.Supplier, {
+                foreignKey: 'supplierId',
+                onDelete: 'CASCADE'
+            });
+        }
+    }
+
+    Product.init({
         name: {
             type: DataTypes.STRING,
             allow_null: false
@@ -22,18 +37,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.FLOAT,
             defaultValue: 0
         },
+    }, {
+        sequelize,
+        modelName: 'Product',
     });
-
-    Product.associate = (models) => {
-        Product.belongsTo(models.Category, {
-            foreignKey: 'category_id',
-            onDelete: 'CASCADE'
-        });
-        Product.belongsTo(models.Supplier, {
-            foreignKey: 'supplier_id',
-            onDelete: 'CASCADE'
-        });
-    };
-
     return Product;
 };

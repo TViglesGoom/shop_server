@@ -1,5 +1,5 @@
 module.exports = (db) => ({
-    addSupplier: ({name}) => {
+    addCategory: ({name}) => {
         return db.Category.create({
             name
         })
@@ -7,10 +7,10 @@ module.exports = (db) => ({
     listAllCategories: () => {
         db.Supplier.findAll();
     },
-    findSupplier: (id) => {
+    findCategory: (id) => {
         return db.Category.findById(id);
     },
-    removeSupplier: (category) => {
+    removeCategory: (category) => {
         return category.destroy();
     }
 });

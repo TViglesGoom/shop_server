@@ -20,23 +20,23 @@ module.exports = {
     async findSupplierById(req, res) {
         const {id} = req.params;
         try {
-            const Product = await SupplierCRUD.findSupplier(id);
-            res.status(200).send(Product);
+            const Supplier = await SupplierCRUD.findSupplier(id);
+            res.status(200).send(Supplier);
         } catch (err) {
             res.status(404).send({message: `Supplier with id ${id} was not found`});
         }
     },
     async removeSupplier(req, res) {
         const {id} = req.params;
-        let Product;
+        let Supplier;
         try {
-            Product = await SupplierCRUD.findSupplier(id);
+            Supplier = await SupplierCRUD.findSupplier(id);
         } catch (err) {
             return res.status(404).send({message: `Supplier with id ${id} was not found`});
         }
         try {
-            Product = await SupplierCRUD.removeSupplier(Product);
-            res.status(204).send(Product);
+            Supplier = await SupplierCRUD.removeSupplier(Supplier);
+            res.status(204).send(Supplier);
         } catch (err) {
             res.status(400).send(err);
         }

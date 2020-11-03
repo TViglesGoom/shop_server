@@ -1,5 +1,6 @@
 To start the server you need "/config/.env" file. You can use this one:
-```PORT=8080
+```
+PORT=8080
 DB_NAME=svhioyrt
 DB_USER=svhioyrt
 DB_PASSWORD=ypviMgrREv_PAZUbqn4jiRag18XSeunO
@@ -9,7 +10,8 @@ DB_DIALECT=postgres
 
 To enter the development mode and run the server type:
 
-```npm i
+```
+npm i
 npm start
 ```
 
